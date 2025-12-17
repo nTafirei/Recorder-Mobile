@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000</color>
+    <color name="red">#FF0000</color>
+    <color name="contents_text">#000000</color>
+    <color name="indigo">#4b0082</color>
+    <color name="pink">#FFC0CB</color>
+    <color name="steelBlue">#4682B4</color>
+    <color name="skyBlue">#87CEEB</color>
+    <color name="rebeccaBlue">#663399</color>
+    <color name="teal">#008080</color>
+    <color name="rebeccaPurple">#663399</color>
+    <color name="platinum">#E5E4E2</color>
+    <color name="slateBlue">#E5E4E2</color>
+    <color name="title_color">#148F77</color>
+    <color name="mableBlue">#566D7E</color>
+    <color name="metalicSilver">#BCC6CC</color>
+    <color name="aqua">#00FFFF</color>
+    <color name="salmon">#FA8072</color>
+    <color name="darksalmon">#E9967A</color>
+    <color name="darkblue">#00008B</color>
+    <color name="purple">#800080</color>
+    <color name="lightblue">#ADD8E6</color>
+    <color name="bluejay">#2B547E</color>
+    <color name="lighbuesteel">#B0CFDE</color>
+</resources>

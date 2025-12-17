@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="0dip"
+    android:layout_weight="4"
+    android:orientation="horizontal">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dip">
+
+            <TextView
+                android:id="@+id/siteurl"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:autoLink="web"
+                android:paddingLeft="1dp"
+                android:text="@string/site_url_link" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dip">
+
+            <TextView
+                android:id="@+id/copyright"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingLeft="4dp"
+                android:text="@string/copyright" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.VouchersFragment">
+
+    <LinearLayout
+        android:id="@+id/dateSelectionRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Original info text -->
+        <!--       <TextView
+                   android:id="@+id/vouchersInfoLayoutText"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="@string/voucher_list_info"
+                   android:textAlignment="center"
+                   android:textSize="18sp"
+                   android:textColor="@color/rebeccaPurple" />-->
+
+        <!-- New Date Field 1 -->
+        <TextView
+            android:id="@+id/startDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:drawable/edit_text"
+            android:clickable="true"
+            android:focusable="false"
+            android:padding="8dp"
+            android:text="Start Date"
+            android:textSize="18sp" />
+
+        <!-- New Date Field 2 -->
+        <TextView
+            android:id="@+id/endDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:drawable/edit_text"
+            android:clickable="true"
+            android:focusable="false"
+            android:padding="8dp"
+            android:text="End Date"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/searchButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:drawable/edit_text"
+            android:clickable="true"
+            android:focusable="false"
+            android:padding="8dp"
+            android:text="Search Vouchers"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+        <ListView
+            android:id="@+id/vouchersListView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:divider="#CCCCCC"
+            android:dividerHeight="1dp"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dateSelectionRow" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

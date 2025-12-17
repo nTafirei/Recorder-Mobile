@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.PurchaseFragment">
+
+    <ScrollView
+        android:id="@+id/purchaseScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/purchaseButtonRow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/purchaseLayoutText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:text="@string/enter_purchase_info"
+                android:textAlignment="center"
+                android:textColor="@color/rebeccaPurple"
+                android:textSize="20sp" />
+
+            <!-- Product Name -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center_vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/purchase_productNameLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/productNameText"
+                    android:layout_weight="1"
+                    android:textColor="@color/darkblue"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/purchase_productName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_weight="1"
+                    android:textColor="@color/contents_text"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <!-- Merchant Name -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center_vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/purchase_MerchantNameLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/productMerchantText"
+                    android:layout_weight="1"
+                    android:textColor="@color/darkblue"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/purchase_MerchantName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_weight="1"
+                    android:textColor="@color/contents_text"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <!-- Amount -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/purchaseAmountLabel"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/amountText"
+                    android:textColor="@color/darkblue"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/purchase_amountId"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:text="4"
+                    android:textColor="@color/contents_text" />
+            </LinearLayout>
+
+            <!-- Buyer Mobile -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/purchaseBuyerLabel"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/buyerMobileText"
+                    android:textColor="@color/darkblue"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/purchase_BuyerMobile"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="0712374658"
+                    android:textColor="@color/contents_text" />
+            </LinearLayout>
+
+            <!-- Beneficiary Mobile -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/purchaseBeneficiaryLabel"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/beneficiaryMobileText"
+                    android:textColor="@color/darkblue"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/purchase_BeneficiaryMobile"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="0712374658"
+                    android:textColor="@color/contents_text" />
+            </LinearLayout>
+
+            <!-- Meter -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/purchaseMeterLabel"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/meterText"
+                    android:textColor="@color/darkblue"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/purchase_Meter"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="98876453673"
+                    android:textColor="@color/contents_text" />
+            </LinearLayout>
+            <!-- Vendors -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/paymentMethodIdLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/paymentMethodLabel"
+                    android:textColor="@color/darkblue"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/paymentMethod"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:textColor="@color/contents_text" />
+            </LinearLayout>
+            <!-- Password -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/purchasePasswordLabel"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/passwordText"
+                    android:textColor="@color/darkblue"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/purchasePassword"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:text="test"
+                    android:textColor="@color/contents_text" />
+            </LinearLayout>
+            <!-- Minimum Purchase -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center_vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/purchaseMinTextViewLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/minPurchaseText"
+                    android:layout_weight="1"
+                    android:textColor="@color/darkblue"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/purchaseMinTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_weight="1"
+                    android:textColor="@color/contents_text"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <!-- Maximum Purchase -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center_vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/purchaseMaxTextViewLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/maxPurchaseText"
+                    android:layout_weight="1"
+                    android:textColor="@color/darkblue"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/purchaseMaxTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_weight="1"
+                    android:textColor="@color/contents_text"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/purchaseButtonRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:weightSum="2"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/purchaseBtnClear"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/round_button"
+            android:text="@string/clear"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/purchaseBtnBuy"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_button"
+            android:text="@string/buyText"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

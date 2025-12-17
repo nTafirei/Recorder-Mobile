@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home_section">
+
+    <fragment
+        android:id="@+id/navigation_login_section"
+        android:name="com.marotech.recording.fragments.LoginFragment"
+        android:label="@string/title_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/navigation_home_section"
+        android:name="com.marotech.recording.fragments.HelpFragment"
+        android:label="@string/title_at_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/navigation_products_section"
+        android:name="com.marotech.recording.fragments.PurchaseFragment"
+        android:label="@string/title_products"
+        tools:layout="@layout/fragment_old_vouchers" />
+
+    <fragment
+        android:id="@+id/navigation_user_section"
+        android:name="com.marotech.recording.fragments.RegisterFragment"
+        android:label="@string/title_user_info"
+        tools:layout="@layout/fragment_register" />
+
+    <fragment
+        android:id="@+id/navigation_balance_section"
+        android:name="com.marotech.recording.fragments.BalanceFragment"
+        android:label="@string/title_check_balance"
+        tools:layout="@layout/fragment_purchase" />
+    <fragment
+        android:id="@+id/navigation_vouchers_section"
+        android:name="com.marotech.recording.fragments.VouchersFragment"
+        android:label="@string/title_vouchers_info"
+        tools:layout="@layout/fragment_purchase" />
+
+</navigation>
