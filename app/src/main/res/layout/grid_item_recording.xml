@@ -68,7 +68,7 @@
         android:background="@drawable/round_button"
         android:drawablePadding="10dp"
         android:paddingLeft="10dp"
-        android:text="@string/buyText"
+        android:text="@string/playText"
         android:textColor="#ffffff" />
 
 </LinearLayout>

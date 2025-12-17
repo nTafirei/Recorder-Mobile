@@ -4,20 +4,20 @@
     <item
         android:id="@+id/navigation_recordings_info"
         android:icon="@drawable/gear"
-        android:tooltipText="@string/title_products"
-        android:title="@string/title_products"/>
+        android:tooltipText="@string/title_recordings"
+        android:title="@string/title_recordings"/>
 
     <item
         android:id="@+id/navigation_vouchers_info"
         android:icon="@drawable/topup"
-        android:tooltipText="@string/title_vouchers_info"
-        android:title="@string/title_vouchers_info"/>
+        android:tooltipText="@string/help"
+        android:title="@string/help"/>
 
     <item
         android:id="@+id/navigation_balance_info"
         android:icon="@drawable/star"
-        android:tooltipText="@string/title_check_balance"
-        android:title="@string/title_check_balance"/>
+        android:tooltipText="@string/terms"
+        android:title="@string/terms"/>
 
     <item
         android:id="@+id/navigation_register_info"

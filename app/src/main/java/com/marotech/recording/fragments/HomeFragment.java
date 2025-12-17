@@ -29,10 +29,8 @@ public class HomeFragment extends BaseFragment {
         updateSession();
         CardView homeLoginView = root.findViewById(R.id.homeLoginCard);
         CardView homeRegisterCard = root.findViewById(R.id.homeRegisterCard);
-        CardView homeSyncCard = root.findViewById(R.id.homeSyncCard);
         CardView homeRecordingsCard = root.findViewById(R.id.homeRecordingsCard);
         CardView homeHelpCard = root.findViewById(R.id.homeHelpCard);
-        CardView homePointsCard = root.findViewById(R.id.homePointsCard);
 
         homeLoginView.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -48,14 +46,6 @@ public class HomeFragment extends BaseFragment {
                         new RegisterFragment(context);
                 getActivity().getSupportFragmentManager().beginTransaction().
                         replace(R.id.fragment_container, registerFragment).commit();
-            }
-        });
-
-        homeSyncCard.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                LogoutFragment syncFragment = new LogoutFragment(context);
-                getActivity().getSupportFragmentManager().beginTransaction().
-                        replace(R.id.fragment_container, syncFragment).commit();
             }
         });
 

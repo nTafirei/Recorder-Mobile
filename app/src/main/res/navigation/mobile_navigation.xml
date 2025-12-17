@@ -17,25 +17,14 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/navigation_products_section"
-        android:name="com.marotech.recording.fragments.PurchaseFragment"
-        android:label="@string/title_products"
-        tools:layout="@layout/fragment_old_vouchers" />
+        android:name="com.marotech.recording.fragments.RecordingsFragment"
+        android:label="@string/title_recordings"
+        tools:layout="@layout/fragment_recordings" />
 
     <fragment
         android:id="@+id/navigation_user_section"
         android:name="com.marotech.recording.fragments.RegisterFragment"
         android:label="@string/title_user_info"
         tools:layout="@layout/fragment_register" />
-
-    <fragment
-        android:id="@+id/navigation_balance_section"
-        android:name="com.marotech.recording.fragments.BalanceFragment"
-        android:label="@string/title_check_balance"
-        tools:layout="@layout/fragment_purchase" />
-    <fragment
-        android:id="@+id/navigation_vouchers_section"
-        android:name="com.marotech.recording.fragments.VouchersFragment"
-        android:label="@string/title_vouchers_info"
-        tools:layout="@layout/fragment_purchase" />
 
 </navigation>
