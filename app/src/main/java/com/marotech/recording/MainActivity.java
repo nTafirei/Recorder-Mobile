@@ -70,5 +70,5 @@ public class MainActivity extends AbstractActivity {
         return true;
     }
 
-    private final String TAG = "paystream_MainActivity";
+    private final String TAG = "recorder_MainActivity";
 }

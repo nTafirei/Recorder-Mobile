@@ -1,5 +1,5 @@
 adb -s emulator-5554 shell
-run-as marotech.paystream
+run-as marotech.recorder
 
 
 emulator -avd Galaxy_Nexus_API_29

@@ -254,5 +254,5 @@ public class RegisterFragment extends BaseFragment implements RemoteServiceCallb
         }
     }
 
-    private final String TAG = "paystream_RegisterFragment";
+    private final String TAG = "recorder_RegisterFragment";
 }

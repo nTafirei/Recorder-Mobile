@@ -19,7 +19,7 @@
     <string name="recordings_service_url">http://10.0.2.2:8080/recordings/</string>
     <string name="register_service_url">http://10.0.2.2:8080/register/</string>
     <string name="payment_methods_service_url">http://10.0.2.2:8080/payment-methods/</string>
-    <string name="support_url">http://www.paystream.co.zw/support</string>
+    <string name="support_url">http://www.recorder.co.zw/support</string>
     <string name="terms_url">http://www.recordings.co.zw/terms</string>
     <string name="previous">Previous</string>
     <string name="title_logout">Log Out</string>
@@ -78,7 +78,7 @@
     <string name="done_label">DONE</string>
     <string name="action_label">ACTION</string>
     <string name="copyright">Copyright \u00A9 MaroTech Solutions 2024 - 2030</string>
-    <string name="site_url_link"> http://www.paystream.co.zw</string>
+    <string name="site_url_link"> http://www.recorder.co.zw</string>
     <string name="submit_label">Submit</string>
     <string name="request_label">Request</string>
     <string name="contactNumberLabel">Contact Number</string>

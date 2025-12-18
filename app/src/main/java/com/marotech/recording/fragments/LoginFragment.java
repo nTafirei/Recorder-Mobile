@@ -101,5 +101,5 @@ public class LoginFragment extends BaseFragment implements RemoteServiceCallback
         sendToStatusPage("Failed to login: " + response.getMessage());
     }
 
-    final String TAG = "paystream_LoginFragment";
+    final String TAG = "recorder_LoginFragment";
 }

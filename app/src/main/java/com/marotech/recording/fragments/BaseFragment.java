@@ -144,5 +144,5 @@ public class BaseFragment extends Fragment {
                 replace(R.id.fragment_container, homeFragment).commit();
     }
 
-    private final String TAG = "paystream_BaseFragment";
+    private final String TAG = "recorder_BaseFragment";
 }

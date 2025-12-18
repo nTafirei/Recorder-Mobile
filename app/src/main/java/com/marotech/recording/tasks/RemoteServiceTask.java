@@ -37,7 +37,7 @@ public class RemoteServiceTask extends AsyncTask<String, Void, String> {
             .create();
     private String jsonRequestBody;
     private RemoteServiceCallback callback;
-    private static final String TAG = "paystream_RemoteServiceTask";
+    private static final String TAG = "recorder_RemoteServiceTask";
 
     public RemoteServiceTask(RemoteServiceCallback callback, String jsonRequestBody) {
         this.callback = callback;

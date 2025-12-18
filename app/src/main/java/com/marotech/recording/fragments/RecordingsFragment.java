@@ -100,5 +100,5 @@ public class RecordingsFragment extends BaseFragment implements RemoteServiceCal
         }
     }
 
-    private final String TAG = "paystream_ProductsFragment";
+    private final String TAG = "recorder_ProductsFragment";
 }

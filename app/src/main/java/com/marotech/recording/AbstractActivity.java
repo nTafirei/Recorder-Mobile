@@ -412,5 +412,5 @@ public abstract class AbstractActivity extends AppCompatActivity implements Bott
     protected RecordingsFragment recordingsFragment;
 
     private static final String EXIT = "EXIT";
-    private final String TAG = "paystream_AbstractActivity";
+    private final String TAG = "recorder_AbstractActivity";
 }

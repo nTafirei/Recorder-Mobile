@@ -43,5 +43,5 @@ public class RecordingService extends BaseService {
         }
     }
 
-    private final String TAG = "paystream_RecordingService";
+    private final String TAG = "recorder_RecordingService";
 }
