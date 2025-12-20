@@ -1,64 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="8dp"
-    android:gravity="center_horizontal">
+    android:padding="8dp">
 
-    <LinearLayout
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingVertical="8dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp">
+        android:layout_height="match_parent"
+        android:alignmentMode="alignMargins"
+        android:columnCount="2"
+        android:padding="16dp"
+        android:rowCount="2"
+        android:useDefaultMargins="true">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:text="@string/nameText"
-            android:textSize="18sp"
             android:textColor="@color/darkblue"
-            android:gravity="center_vertical"/>
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/recordingNameTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_columnWeight="1"
             android:text=""
-            android:textSize="18sp"
             android:textColor="@color/contents_text"
-            android:paddingStart="8dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingVertical="4dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp">
+            android:textSize="18sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/recordingTypeText"
-            android:textSize="18sp"
+            android:gravity="center_vertical"
+            android:text="@string/recordingLocationText"
             android:textColor="@color/darkblue"
-            android:gravity="center_vertical"/>
+            android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/recordingMerchantTextView"
+            android:id="@+id/recordingLocation"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_columnWeight="1"
             android:text=""
-            android:textSize="18sp"
             android:textColor="@color/contents_text"
-            android:paddingStart="8dp" />
-    </LinearLayout>
+            android:textSize="18sp" />
+
+    </GridLayout>
 
     <Button
         android:id="@+id/recordingBtnPlay"
@@ -70,6 +61,4 @@
         android:paddingLeft="10dp"
         android:text="@string/playText"
         android:textColor="#ffffff" />
-
 </LinearLayout>
-

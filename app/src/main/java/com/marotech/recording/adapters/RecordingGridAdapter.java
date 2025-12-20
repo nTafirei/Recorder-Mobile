@@ -16,12 +16,12 @@ import java.util.List;
 public class RecordingGridAdapter extends BaseAdapter {
     private Context context;
     private List<RecordingDTO> recordings;
-    private OnBuyClickListener buyClickListener;
+    private OnRecordingsClickListener recordingsClickListener;
 
-    public RecordingGridAdapter(Context context, List<RecordingDTO> recordings, OnBuyClickListener listener) {
+    public RecordingGridAdapter(Context context, List<RecordingDTO> recordings, OnRecordingsClickListener listener) {
         this.context = context;
         this.recordings = recordings;
-        this.buyClickListener = listener;
+        this.recordingsClickListener = listener;
     }
 
     @Override
@@ -40,39 +40,43 @@ public class RecordingGridAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View view, ViewGroup parent) {
         ViewHolder holder;
-        if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.grid_item_recording, parent, false);
+        if (view == null) {
+            view = LayoutInflater.from(context).inflate(R.layout.grid_item_recording, parent, false);
             holder = new ViewHolder();
-            holder.recordingBtnPlay = convertView.findViewById(R.id.recordingBtnPlay);
-            convertView.setTag(holder);
+            holder.nameTextView = view.findViewById(R.id.recordingNameTextView);
+            holder.recordingLocation = view.findViewById(R.id.recordingLocation);
+            holder.recordingBtnPlay = view.findViewById(R.id.recordingBtnPlay);
+            view.setTag(holder);
         } else {
-            holder = (ViewHolder) convertView.getTag();
+            holder = (ViewHolder) view.getTag();
         }
 
         final RecordingDTO recording = getItem(position);
         holder.nameTextView.setText(recording.getName());
+        holder.recordingLocation.setText(recording.getDeviceLocation());
 
         holder.recordingBtnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (buyClickListener != null) {
-                    buyClickListener.onBuyClick(recording);
+                if (recordingsClickListener != null) {
+                    recordingsClickListener.OnRecordings(recording);
                 }
             }
         });
 
-        return convertView;
+        return view;
     }
 
     static class ViewHolder {
         TextView nameTextView;
+        TextView recordingLocation;
         Button recordingBtnPlay;
     }
 
     // Interface for callback
-    public interface OnBuyClickListener {
-        void onBuyClick(RecordingDTO recording);
+    public interface OnRecordingsClickListener {
+        void OnRecordings(RecordingDTO recording);
     }
 }

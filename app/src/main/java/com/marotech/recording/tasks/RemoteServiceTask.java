@@ -125,11 +125,12 @@ public class RemoteServiceTask extends AsyncTask<String, Void, String> {
         ResponseType responseType = response.getResponseType();
         if (ResponseType.REG_DATA == responseType) {
         } else if (ResponseType.RECORDINGS == responseType) {
-            Object pointsDto = response.getAdditionalInfo().get(Constants.RECORDINGS);
-            if (pointsDto != null) {
-                RecordingDTO dto = GSON.fromJson(pointsDto.toString(), RecordingDTO.class);
-                response.getAdditionalInfo().put(Constants.RECORDINGS, dto);
-            }
+            String objStr = (String) response.getAdditionalInfo().get(Constants.RECORDINGS);
+
+            Type objListType = new TypeToken<List<RecordingDTO>>() {
+            }.getType();
+            List<RecordingDTO> list = GSON.fromJson(objStr, objListType);
+            response.getAdditionalInfo().put(Constants.RECORDINGS, list);
         }
         callback.onObjectsFetched(response);
     }

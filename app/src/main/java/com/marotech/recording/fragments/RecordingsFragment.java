@@ -21,6 +21,7 @@ import com.marotech.recording.api.ServiceResponse;
 import com.marotech.recording.callbacks.RemoteServiceCallback;
 import com.marotech.recording.model.Constants;
 import com.marotech.recording.service.RecordingService;
+import com.marotech.recording.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -28,21 +29,25 @@ import java.util.List;
 
 
 public class RecordingsFragment extends BaseFragment implements RemoteServiceCallback,
-        RecordingGridAdapter.OnBuyClickListener {
+        RecordingGridAdapter.OnRecordingsClickListener {
 
     private ListView listView;
-    private List<RecordingDTO> products = new ArrayList<>();
+    private List<RecordingDTO> recordings = new ArrayList<>();
     private RecordingGridAdapter adapter;
 
     public RecordingsFragment(Context context) {
         super(context);
-        adapter = new RecordingGridAdapter(this.context, products, this);
+        adapter = new RecordingGridAdapter(this.context, recordings, this);
     }
 
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        if (!isSessionValid()) {
+            sendToLoginPage(this);
+            return null;
+        }
         updateSession();
         final View root = inflater.inflate(R.layout.fragment_recordings, container, false);
         listView = root.findViewById(R.id.recordingsListView);
@@ -50,13 +55,19 @@ public class RecordingsFragment extends BaseFragment implements RemoteServiceCal
         setupClickListener(listView);
         RecordingService service = new RecordingService(this);
         RecordingsRequest request = new RecordingsRequest();
+        String token = retrieveSessionToken();
+        if (StringUtils.isBlank(token)) {
+            sendToStatusPage("Could not retrieve token from session");
+            return null;
+        }
+        request.setToken(token);
         request.setPage(new Page());
         service.fetchProducts(request);
         return root;
     }
 
     @Override
-    public void onBuyClick(RecordingDTO product) {
+    public void OnRecordings(RecordingDTO product) {
         RecordingsFragment purchaseFragment = new RecordingsFragment(context);
         getActivity().getSupportFragmentManager().beginTransaction().
                 replace(R.id.fragment_container, purchaseFragment).commit();
@@ -78,8 +89,8 @@ public class RecordingsFragment extends BaseFragment implements RemoteServiceCal
     public void onObjectsFetched(ServiceResponse serviceResponse) {
 
         if (serviceResponse == null || serviceResponse.getCode() != HttpCode.OK) {
-            Log.d(TAG, "Error fetching products: " + serviceResponse.getMessage());
-            sendToStatusPage("Error fetching products: " + serviceResponse.getMessage());
+            Log.d(TAG, "Error fetching recordings: " + serviceResponse.getMessage());
+            sendToStatusPage("Error fetching recordings: " + serviceResponse.getMessage());
             return;
         }
 
@@ -87,18 +98,19 @@ public class RecordingsFragment extends BaseFragment implements RemoteServiceCal
             Collection<? extends RecordingDTO> col =
                     (Collection<? extends RecordingDTO>) serviceResponse.getAdditionalInfo().get(Constants.RECORDINGS);
             if (col == null || col.isEmpty()) {
-                sendToStatusPage("No products were found");
+                Log.e(TAG, "No recordings were found: " + serviceResponse);
+                sendToStatusPage("No recordings were found in the system");
                 return;
             }
 
-            products.addAll(col);
+            recordings.addAll(col);
             adapter.notifyDataSetChanged();
         } catch (Exception e) {
             Log.e(TAG, e.getMessage());
-            sendToStatusPage("Error fetching products: " + serviceResponse.getMessage());
+            sendToStatusPage("Error fetching recordings: " + serviceResponse.getMessage());
             return;
         }
     }
 
-    private final String TAG = "recorder_ProductsFragment";
+    private final String TAG = "recorder_RecordingsFragment";
 }

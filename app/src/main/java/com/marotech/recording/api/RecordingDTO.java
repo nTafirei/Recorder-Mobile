@@ -5,9 +5,9 @@ import java.math.BigDecimal;
 
 public class RecordingDTO {
 
-    private String id;
     private String name;
-    private RecordingType recordingType;
+    private String deviceLocation;
+    private String id;
 
     public String getId() {
         return id;
@@ -25,20 +25,20 @@ public class RecordingDTO {
         this.name = name;
     }
 
-    public RecordingType getRecordingType() {
-        return recordingType;
+    public String getDeviceLocation() {
+        return deviceLocation;
     }
 
-    public void setRecordingType(RecordingType recordingType) {
-        this.recordingType = recordingType;
+    public void setDeviceLocation(String deviceLocation) {
+        this.deviceLocation = deviceLocation;
     }
 
     @Override
     public String toString() {
-        return "ProductDTO{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", recordingType='" + recordingType + '\'' +
+        return "RecordingDTO{" +
+                "name='" + name + '\'' +
+                ", deviceLocation='" + deviceLocation + '\'' +
+                ", id='" + id + '\'' +
                 '}';
     }
 }
